@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clockwatch</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="watch">
+        <p id="time">00:00:00</p>
+        <p id="date">Loading...</p>
+    </div>
+    <script>
+        function showTime() {
+            let now = new Date();
+
+            const hour = now.getHours();
+            const min = now.getMinutes();
+            const sec = now.getSeconds();
+
+            const date = now.getDate();
+            const month = now.getMonth();
+            const year = now.getFullYear();
+
+            document.getElementById("time").innerText = hour + ":" + min + ":" + sec;
+            document.getElementById("date").innerText = date + "/" + month + "/" + year;
+        }
+        setInterval(showTime, 1000);
+    </script>
+</body>
+
+</html>
